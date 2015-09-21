@@ -1,0 +1,202 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Xin - An Explorer, Developer + PM </title>
+
+    <link rel="shortcut icon" href="./favicon32.ico">
+    <!--GA-->
+    <script>
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-47474062-6']);
+        _gaq.push(['_trackPageview']);
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <!-- Import Library references -->
+    <!--<script src="./pkgs/pkg_libs/snippet_ga.js"></script>-->
+    <!--================ jQuery ================-->
+    <script src="./pkgs/pkg_libs/jquery-1.11.3.min.js"></script>
+    <!--================ Bootstrap ================-->
+    <!-- HTML5 Shim 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
+    <!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
+    <!--[if lt IE 9]>
+       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./pkgs/pkg_libs/bootstrap-3.3.5-dist/css/bootstrap.min.css" />
+    <!-- Bootstrap optional theme -->
+    <link rel="stylesheet" href="./pkgs/pkg_libs/bootstrap-3.3.5-dist/css/bootstrap-theme.min.css" />
+    <!-- Bootstrap JavaScript -->
+    <script src="./pkgs/pkg_libs/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+    <!--================ Font Awesome ================-->
+    <!-- Bootstrap JavaScript -->
+    <link rel="stylesheet" href="./pkgs/pkg_libs/font-awesome-4.4.0/css/font-awesome.min.css">
+
+    <!-- Project Library references -->
+    <!-- Custom references -->
+    <!-- Here: include any less plugin scripts, any required browser shims and optionally set less = any options  -->
+    <!--<link rel="stylesheet/less" type="text/css" href="./styles/pgdefault.less" />
+    <script src="./pkgs/pkg_libs/less.min.js"></script>-->
+    <link href="./styles/pgdefault_cmpless.css" rel="stylesheet" />
+    <!--<script src="./pgdefault.js"></script>-->
+</head>
+<body>
+    <header>
+        <!------ Top Navbar ------>
+        <nav class="clx-navbartop navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="./">Xin's World</a>
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                        data-target="#idx-navbartop-collapse">
+                    <span class="sr-only">切换导航</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="clx-navbar-collapse collapse navbar-collapse" id="idx-navbartop-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="clx-lipage-me"><a href="?getpage=page-me">ME</a></li>
+                    <li class="clx-lipage-workshop"><a href="?getpage=page-workshop">WORKSHOP</a></li>
+                    <li class="clx-lipage-gallery"><a href="?getpage=page-gallery">GALLERY</a></li>
+                    <!--<li class="clx-lipage-discovery"><a href="?getpage=page-discovery">DISCOVERY</a></li>-->
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="clx-divContentHolder"></div>
+
+    <footer>
+        <!------ Bottom Navbar ------>
+        <nav class="clx-navbarbottom">
+            <div class="container">
+                <div class="col-xs-12 col-sm-6">
+                    <ul class="clx-ulcopyright">
+                        <li>&copy; XIN</li>
+                        <li>DESIGN: VillaX</li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <ul class="clx-ulsnsicons">
+                        <li>
+                            <a href="mailto:`sLinkEmail1`,`sLinkEmail2`">
+                                <i class="fa fa-envelope fa-lg"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="`sLinkLinkedIn`" title="" target="_blank">
+                                <i class="fa fa-linkedin fa-lg"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="`sLinkGithub`" title="" target="_blank">
+                                <i class="fa fa-github fa-lg"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </footer>
+</body>
+</html>
+<script>
+    var myJSONObj;
+    $(document).ready(function () {
+        $.get('./data/data.json.txt', function (resjson) {
+            myJSONObj = JSON.parse(resjson);
+            localizeAllStrings_simple($('.clx-navbarbottom')[0], myJSONObj.srcPersonalData);
+
+            renderCurrentPage();
+        });
+    });
+
+    function modalShowcases(element, sFilterCategory) {
+        $.get('./data/clx-rowshowcases-colwrappercmn.html', function (resp) {
+            //var colWeight_xs = 6, colWeight_sm = 4;
+            var colWeight_xs = 12, colWeight_sm = 6;
+            var theShowcases = [];
+            var rowshowcasescmn = $(element).find('.clx-rowshowcasescmn')[0];
+            for (var nCurCase in myJSONObj.srcShowcase) {
+                if (!sFilterCategory || myJSONObj.srcShowcase[nCurCase].sCategory == sFilterCategory)
+                    theShowcases.push(myJSONObj.srcShowcase[nCurCase]);
+            }
+            nCurCase = 0;
+            $(rowshowcasescmn).html('');
+            while (nCurCase++ < theShowcases.length) {
+                var injectHTML = '<div class="clx-rowshowcases-colwrappercmn col-xs-' + colWeight_xs +
+                    ' col-sm-' + colWeight_sm + '">' + resp + '</div>';
+                if (0 == nCurCase % (12 / colWeight_xs)) injectHTML += '<div class="clearfix visible-xs"></div>';
+                if (0 == nCurCase % (12 / colWeight_sm)) injectHTML += '<div class="clearfix visible-sm"></div>';
+                $(rowshowcasescmn).hide().append('' + injectHTML).show();
+                var elmLastAdded = $(rowshowcasescmn).children('.clx-rowshowcases-colwrappercmn:last')[0];
+                localizeAllStrings_simple(elmLastAdded, theShowcases[nCurCase - 1]);
+            }
+        });
+    }
+
+    //文字本地化
+    function localizeAllStrings_simple(dvContainer, myDictStrings) {
+        //此为旧用的解决方案
+        var aelmAlls = dvContainer.querySelectorAll('*');
+        for (var nlelm = 0; nlelm < aelmAlls.length; nlelm++) {
+            var arxMatches = aelmAlls[nlelm].innerHTML.match(/`.*?`/g);
+            for (var nlString in arxMatches) {
+                var myDictProperty = arxMatches[nlString].replace(/(^`*)|(`*$)/g, '');
+                aelmAlls[nlelm].innerHTML = aelmAlls[nlelm].innerHTML.replace
+                    (arxMatches[nlString], myDictStrings[myDictProperty] || '...');
+            }
+        }
+    }
+
+    //
+    function renderCurrentPage() {
+        var getpage = getQueryString('getpage') || 'page-me';
+        $('.clx-li' + getpage).addClass('active');
+        switch (getpage) {
+            case 'page-me':
+                $.get('./data/pg-me.html', function (resp) {
+                    $('.clx-divContentHolder').html('' + resp);
+                    modalShowcases($('.clx-divContentHolder')[0]);
+                });
+                break;
+            case 'page-workshop':
+                $.get('./data/pg-workshop.html', function (resp) {
+                    $('.clx-divContentHolder').html('' + resp);
+                    modalShowcases($('.clx-divContentHolder')[0], "PROJECT");
+                });
+                break;
+            case 'page-gallery':
+                $.get('./data/pg-gallery.html', function (resp) {
+                    $('.clx-divContentHolder').html('' + resp);
+                    modalShowcases($('.clx-divContentHolder')[0], "GALLERY");
+                });
+                break;
+            case 'page-discovery':
+                break;
+            case 'page-workshop-megatanksweb':
+                $.get('./data/pg-workshop-megatanksweb.html', function (resp) {
+                    $('.clx-divContentHolder').html('' + resp);
+                    //modalShowcases($('.clx-divContentHolder')[0], "PROJECT");
+                });
+                break;
+            default: break;
+        }
+    }
+
+    //获取通过URL输入的参数
+    function getQueryString(name) {
+        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+            results = regex.exec(location.search);
+        return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+    }
+</script>

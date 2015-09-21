@@ -1,0 +1,119 @@
+﻿@import url(http://fonts.googleapis.com/css?family=Josefin+Slab|Muli|Lato|Nobile|Lobster+Two&subset=latin&v2);
+* {
+  font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "微软雅黑", sans-serif;
+  /*-moz-transition: all .5s; // Firefox 4
+    -webkit-transition: all .5s; // Safari 和 Chrome
+    -o-transition: all .5s; // Opera
+    transition: all .5s;*/
+}
+body header:first-of-type {
+  height: 4em;
+}
+body header:first-of-type nav.clx-navbartop {
+  padding: .5em;
+}
+body header:first-of-type nav.clx-navbartop .navbar-brand {
+  font-size: 2.5em;
+  color: #fff;
+}
+body header:first-of-type nav.clx-navbartop div.clx-navbar-collapse {
+  padding-right: 1em;
+  font-size: 1.4em;
+  font-weight: 700;
+}
+body header:first-of-type nav.clx-navbartop div.clx-navbar-collapse li {
+  padding: .1em .2em;
+}
+body header:first-of-type nav.clx-navbartop div.clx-navbar-collapse li a {
+  border-radius: 1000em;
+}
+body header:first-of-type nav.clx-navbartop div.clx-navbar-collapse li a:hover {
+  background: #00aaff !important;
+}
+body .clx-imgwrappermain {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  min-height: 480px;
+}
+body .clx-contentwrappermain div.clx-rowshowcasescmn {
+  padding: 0 2em;
+}
+body .clx-contentwrappermain div.clx-rowshowcasescmn > div.clx-rowshowcases-colwrappercmn {
+  padding: 1em .5em;
+  overflow: hidden;
+}
+body .clx-contentwrappermain div.clx-rowshowcasescmn > div.clx-rowshowcases-colwrappercmn * {
+  color: #fff;
+  text-decoration: none;
+}
+body .clx-contentwrappermain div.clx-rowshowcasescmn > div.clx-rowshowcases-colwrappercmn a.clx-rowshowcases-colwrapper-anchorcmn:hover .clx-icoaction {
+  color: #00aaff !important;
+}
+body .clx-contentwrappermain div.clx-rowshowcasescmn > div.clx-rowshowcases-colwrappercmn a.clx-rowshowcases-colwrapper-anchorcmn > img {
+  width: 100%;
+}
+body .clx-contentwrappermain div.clx-rowshowcasescmn > div.clx-rowshowcases-colwrappercmn a.clx-rowshowcases-colwrapper-anchorcmn > div.clx-rowshowcases-colwrapper-anchor-divIntro {
+  margin: 1em;
+  color: #000;
+}
+body .clx-contentwrappermain div.clx-rowshowcasescmn > div.clx-rowshowcases-colwrappercmn a.clx-rowshowcases-colwrapper-anchorcmn > div.clx-rowshowcases-colwrapper-anchor-divTitle {
+  position: relative;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 0 .7em;
+  margin-top: -3em;
+  font-size: 1.5em;
+  height: 3em;
+  line-height: 3em;
+  vertical-align: middle;
+  overflow: hidden;
+}
+body .clx-contentwrappermain div.clx-rowshowcasescmn > div.clx-rowshowcases-colwrappercmn a.clx-rowshowcases-colwrapper-anchorcmn > div.clx-rowshowcases-colwrapper-anchor-divTitle .clx-icoaction {
+  position: absolute;
+  right: .7em;
+  top: 1em;
+  transition: all .5s;
+}
+body .clx-contentwrappermain div.clx-rowprojectcasecmn {
+  padding: 0 2em;
+}
+body .clx-contentwrappermain div.clx-rowprojectcasecmn > div.clx-rowprojectcase-colcmn {
+  padding: 1em .5em;
+  overflow: hidden;
+}
+body footer:last-of-type nav.clx-navbarbottom {
+  padding: 2em 1em;
+  background: #000;
+  color: #999;
+}
+body footer:last-of-type nav.clx-navbarbottom ul.clx-ulcopyright {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  letter-spacing: 0.2em;
+}
+body footer:last-of-type nav.clx-navbarbottom ul.clx-ulcopyright li {
+  display: inline-block;
+  margin: 0;
+  padding: 0 0.4em;
+  line-height: 1em;
+}
+body footer:last-of-type nav.clx-navbarbottom ul.clx-ulcopyright li:first-child ~ li {
+  border-left: solid 1px;
+  padding-left: 1.1em;
+}
+body footer:last-of-type nav.clx-navbarbottom ul.clx-ulsnsicons {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  float: right;
+}
+body footer:last-of-type nav.clx-navbarbottom ul.clx-ulsnsicons li {
+  display: inline-block;
+  margin: 0;
+  padding: 0 .3em;
+}
+body footer:last-of-type nav.clx-navbarbottom ul.clx-ulsnsicons li a {
+  color: #ccc !important;
+}

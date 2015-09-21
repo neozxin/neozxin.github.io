@@ -1,0 +1,26 @@
+﻿{
+  "srcShowcase": [
+    {
+      "sCategory": "PROJECT",
+      "imgSrc": "images/MTKW-Screenshot.jpg",
+      "aUrl": "./?getpage=page-workshop-megatanksweb",
+      "divTitle": "MegaTanksWeb",
+      "divIntro": "PROJECT - MegaTanksWeb is an HTML5/JavaScript powered arcade web game.",
+      "divDetails": "MegaTanksWeb is an ongoing project I'm working on to add more features and fun off working time."
+    },
+    {
+      "sCategory": "GALLERY",
+      "imgSrc": "images/IMG_3080.JPG",
+      "aUrl": "./?getpage=page-gallery",
+      "divTitle": "Pole of Cold",
+      "divIntro": "GALLERY - A trip to the world's coldest village by the far end of East Siberia and Russian Fareast.",
+      "divDetails": "I made this trip 2014-2015 winter to the world's coldest village by the far end of East Siberia and Russian Fareast."
+    }
+  ],
+  "srcPersonalData": {
+    "sLinkEmail1": "neozxin@hotmail.com",
+    "sLinkEmail2": "neozxin@gmail.com",
+	"sLinkLinkedIn": "https://cn.linkedin.com/pub/xin-zhang/76/70a/4a3",
+	"sLinkGithub": "https://github.com/neozxin"
+  }
+}
